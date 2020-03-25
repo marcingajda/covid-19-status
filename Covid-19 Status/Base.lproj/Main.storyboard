@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" userInterfaceLayoutDirection="leftToRight" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="Covid-19 Status" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Covid-19 Status" systemMenu="apple" autoenablesItems="NO" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="Loading" enabled="NO" id="5kV-Vb-QxS" userLabel="Delta">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Retry now" hidden="YES" id="6jx-Ii-JOn" userLabel="Retry">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="retryHandler:" target="Voe-Tx-rLC" id="b6B-Xa-VLi"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" title="sdfsdf" id="VOq-y0-SEH"/>
+                                        <menuItem title="Select region" id="MAg-rl-DVH">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Select region" systemMenu="apple" autoenablesItems="NO" id="URq-Fm-ggV">
+                                                <items>
+                                                    <menuItem title="None" enabled="NO" id="i8c-sB-7Tp">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </menuItem>
+                                        <menuItem title="Show notifications" id="ljG-1J-Upa" userLabel="Alerts">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="alertsSwitchHandler:" target="Voe-Tx-rLC" id="7gf-X9-j3L"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="ERr-j9-glZ"/>
+                                        <menuItem title="About..." id="8AQ-8p-cQP" userLabel="About">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showAboutWindow:" target="Voe-Tx-rLC" id="Ra7-ih-byy"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="RxK-Hd-snC"/>
+                                        <menuItem title="Quit" id="4sb-4s-VLi">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Covid_19_Status" customModuleProvider="target">
+                    <connections>
+                        <outlet property="alertsMenuItem" destination="ljG-1J-Upa" id="6En-cd-cZ3"/>
+                        <outlet property="deltaMenuItem" destination="5kV-Vb-QxS" id="WJ5-eC-Ydj"/>
+                        <outlet property="menu" destination="uQy-DD-JDr" id="J7Q-go-iQk"/>
+                        <outlet property="regionMenu" destination="URq-Fm-ggV" id="SeA-ks-eI3"/>
+                        <outlet property="retryMenuItem" destination="6jx-Ii-JOn" id="3vl-jR-B9e"/>
+                    </connections>
+                </customObject>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="80" y="143"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="wyT-T2-DDw">
+            <objects>
+                <windowController storyboardIdentifier="About Window Controller" id="ylK-iz-bv2" sceneMemberID="viewController">
+                    <window key="window" identifier="About" title="About" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="EIX-4g-u9N">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="249" width="350" height="230"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+                        <connections>
+                            <outlet property="delegate" destination="ylK-iz-bv2" id="ZYn-s7-6ao"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="28W-g1-JTY" kind="relationship" relationship="window.shadowedContentViewController" id="gG5-jh-D7R"/>
+                    </connections>
+                </windowController>
+                <customObject id="u4f-bC-saL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="500"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="HA7-2p-HnP">
+            <objects>
+                <viewController id="28W-g1-JTY" customClass="AboutViewController" customModule="Covid_19_Status" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="uqg-Km-dXj">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="255"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="S3X-dL-ThM">
+                                <rect key="frame" x="20" y="187" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="t9d-iz-16R"/>
+                                    <constraint firstAttribute="height" constant="48" id="ul3-zb-Sa2"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo" id="mYR-id-la8"/>
+                            </imageView>
+                            <box title="Box" titlePosition="noTitle" id="dPt-xi-xGS">
+                                <rect key="frame" x="17" y="58" width="316" height="116"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="bdw-Jd-BfF">
+                                    <rect key="frame" x="3" y="3" width="310" height="110"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DKk-In-jvI">
+                                            <rect key="frame" x="13" y="79" width="284" height="16"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Data source" id="spg-XS-UDd">
+                                                <font key="font" metaFont="systemBold"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1aZ-1M-ROp">
+                                            <rect key="frame" x="13" y="60" width="284" height="16"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="https://corona-stats.online/?source=2" id="lhY-fZ-nQY">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="linkColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <connections>
+                                                    <outlet property="representedObject" destination="28W-g1-JTY" id="XoV-NL-pcj"/>
+                                                </connections>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1eH-IB-UlK">
+                                            <rect key="frame" x="13" y="17" width="284" height="16"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Daily data resets at midnight GMT+0" id="uop-yu-b1c">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="818-fj-txC">
+                                            <rect key="frame" x="15" y="43" width="275" height="5"/>
+                                        </box>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="1aZ-1M-ROp" secondAttribute="trailing" constant="15" id="8xt-gf-lpb"/>
+                                        <constraint firstItem="DKk-In-jvI" firstAttribute="top" secondItem="bdw-Jd-BfF" secondAttribute="top" constant="15" id="9dl-Mq-YLP"/>
+                                        <constraint firstItem="818-fj-txC" firstAttribute="top" secondItem="1aZ-1M-ROp" secondAttribute="bottom" constant="14" id="Abk-TV-RPc"/>
+                                        <constraint firstAttribute="trailing" secondItem="1eH-IB-UlK" secondAttribute="trailing" constant="15" id="EiF-AI-Sme"/>
+                                        <constraint firstItem="1aZ-1M-ROp" firstAttribute="leading" secondItem="bdw-Jd-BfF" secondAttribute="leading" constant="15" id="NWs-uD-pOx"/>
+                                        <constraint firstItem="DKk-In-jvI" firstAttribute="leading" secondItem="bdw-Jd-BfF" secondAttribute="leading" constant="15" id="SVC-L1-JZG"/>
+                                        <constraint firstAttribute="trailing" secondItem="DKk-In-jvI" secondAttribute="trailing" constant="15" id="U7S-RF-1Td"/>
+                                        <constraint firstItem="1aZ-1M-ROp" firstAttribute="top" secondItem="DKk-In-jvI" secondAttribute="bottom" constant="3" id="Vx3-jU-ogr"/>
+                                        <constraint firstItem="1eH-IB-UlK" firstAttribute="top" secondItem="818-fj-txC" secondAttribute="bottom" constant="12" id="Yqq-9y-9ls"/>
+                                        <constraint firstItem="1eH-IB-UlK" firstAttribute="leading" secondItem="bdw-Jd-BfF" secondAttribute="leading" constant="15" id="d8r-Ws-eR4"/>
+                                    </constraints>
+                                </view>
+                            </box>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KFk-cx-JfQ">
+                                <rect key="frame" x="76" y="211" width="256" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" title="COVID-19 Status" id="YJw-ga-rD7">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hHN-ma-xYN">
+                                <rect key="frame" x="76" y="194" width="256" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="version: 1.0.0" id="OSg-Ed-kOh">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" id="qSf-of-lPa">
+                                <rect key="frame" x="257" y="13" width="75" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="E40-p5-Mjh">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissAboutWindow:" target="28W-g1-JTY" id="YHX-I8-2sC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dPt-xi-xGS" firstAttribute="top" secondItem="uqg-Km-dXj" secondAttribute="top" constant="83" id="3M6-YL-yYL"/>
+                            <constraint firstAttribute="trailing" secondItem="818-fj-txC" secondAttribute="trailing" constant="40" id="B0n-Cu-59S"/>
+                            <constraint firstItem="hHN-ma-xYN" firstAttribute="top" secondItem="KFk-cx-JfQ" secondAttribute="bottom" constant="1" id="Fbg-Rp-J63"/>
+                            <constraint firstItem="KFk-cx-JfQ" firstAttribute="top" secondItem="uqg-Km-dXj" secondAttribute="top" constant="28" id="QEm-ID-I1K"/>
+                            <constraint firstAttribute="trailing" secondItem="KFk-cx-JfQ" secondAttribute="trailing" constant="20" id="X3J-Dj-Ltn"/>
+                            <constraint firstItem="hHN-ma-xYN" firstAttribute="leading" secondItem="S3X-dL-ThM" secondAttribute="trailing" constant="10" id="X7r-IW-6D3"/>
+                            <constraint firstItem="KFk-cx-JfQ" firstAttribute="leading" secondItem="S3X-dL-ThM" secondAttribute="trailing" constant="10" id="ZYZ-iE-3Vh"/>
+                            <constraint firstAttribute="trailing" secondItem="hHN-ma-xYN" secondAttribute="trailing" constant="20" id="cfi-QB-VvP"/>
+                            <constraint firstItem="dPt-xi-xGS" firstAttribute="leading" secondItem="uqg-Km-dXj" secondAttribute="leading" constant="20" id="cuU-1A-wib"/>
+                            <constraint firstItem="S3X-dL-ThM" firstAttribute="top" secondItem="uqg-Km-dXj" secondAttribute="top" constant="20" symbolic="YES" id="k31-bK-nvn"/>
+                            <constraint firstItem="818-fj-txC" firstAttribute="leading" secondItem="uqg-Km-dXj" secondAttribute="leading" constant="35" id="oTC-yA-koP"/>
+                            <constraint firstItem="S3X-dL-ThM" firstAttribute="leading" secondItem="uqg-Km-dXj" secondAttribute="leading" constant="20" symbolic="YES" id="rBU-Rl-wnw"/>
+                            <constraint firstAttribute="trailing" secondItem="dPt-xi-xGS" secondAttribute="trailing" constant="20" id="yaR-vP-WKc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sourceLink" destination="1aZ-1M-ROp" id="XvS-Xm-960"/>
+                        <outlet property="version" destination="hHN-ma-xYN" id="RIa-nO-2Im"/>
+                    </connections>
+                </viewController>
+                <customObject id="hxu-rc-ssr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="862.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="1024" height="1024"/>
+    </resources>
+</document>
