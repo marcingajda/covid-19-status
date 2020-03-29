@@ -2,6 +2,8 @@
 
 A small widget that shows the ongoing COVID-19 pandemic stats in your MacOS computer menu bar
 
+👉 [Download the app latest version here][DOWNLOAD]
+
 ## Features
 
 * Allow to choose between global and region specific stats
@@ -34,3 +36,6 @@ The code may be messy and far from Swift coding standards.
 ## License
 
 [MIT licensed](./LICENSE)
+
+
+[DOWNLOAD]: https://github.com/marcingajda/covid-19-status/releases/download/v1.0.0/Covid-19_Status_v1.0.0.zip
