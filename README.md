@@ -25,7 +25,7 @@ All data is fetched from [corona-stats.online REST API](https://corona-stats.onl
 
 ## Help and contribution
 
-Feel free to send pull requests and to creat issues.
+Feel free to send pull requests and to create issues.
 
 ## Disclaimer
 
