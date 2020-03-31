@@ -10,27 +10,54 @@ import Cocoa
 import Foundation
 
 class AboutViewController: NSViewController {
-    @IBOutlet weak var sourceLink: NSTextField!
-    @IBOutlet weak var version: NSTextField!
+    @IBOutlet weak var sourceLink: NSTextField?
+    @IBOutlet weak var version: NSTextField?
 
-    
     override func viewDidLoad() {
-        super.viewDidLoad();
-        
-        let versionNumber = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String)!;
-        version.stringValue = String(format: NSLocalizedString("version %@", comment: ""), versionNumber);
-        
-        let sourceClick = NSClickGestureRecognizer(target: self, action: #selector(self.sourceLinkHandler(sender:)));
-        sourceLink.addGestureRecognizer(sourceClick);
-        
-        NSApplication.shared.activate(ignoringOtherApps: true);
+        super.viewDidLoad()
+
+        guard let version = version else {
+            showError(text: "The app UI is broken (version)")
+            return
+        }
+
+        guard let sourceLink = sourceLink else {
+            showError(text: "The app UI is broken (source link)")
+            return
+        }
+
+        let versionNumber = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String)
+
+        version.stringValue = String(
+            format: NSLocalizedString("version %@", comment: ""),
+            versionNumber ?? "??"
+        )
+
+        let sourceClickHandler = NSClickGestureRecognizer(
+            target: self,
+            action: #selector(self.sourceLinkHandler(sender:))
+        )
+
+        sourceLink.addGestureRecognizer(sourceClickHandler)
+
+        NSApplication.shared.activate(ignoringOtherApps: true)
     }
-    
+
     @IBAction func sourceLinkHandler(sender: NSClickGestureRecognizer) {
-        NSWorkspace.shared.open(URL(string:sourceLink.stringValue )!);
+        guard let link = sourceLink?.stringValue else {
+            showError(text: "Can't open the URL address.")
+            return
+        }
+
+        guard let urlAddress = URL(string: link) else {
+            showError(text: "Can't open the URL address.")
+            return
+        }
+
+        NSWorkspace.shared.open(urlAddress)
     }
-    
+
     @IBAction func dismissAboutWindow(_ sender: NSButton) {
-        view.window?.close();
+        view.window?.close()
     }
 }

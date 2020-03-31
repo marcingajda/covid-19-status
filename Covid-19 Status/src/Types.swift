@@ -7,17 +7,17 @@
 //
 
 struct RegionStats: Decodable {
-    let country: String;
-    let cases: Int;
-    let todayCases: Int?;
-    let deaths: Int;
-    let todayDeaths: Int?;
-    let recovered: Int;
-    let active: Int;
-    let critical: Int;
+    let country: String
+    let cases: Int
+    let todayCases: Int?
+    let deaths: Int
+    let todayDeaths: Int?
+    let recovered: Int
+    let active: Int
+    let critical: Int
 }
 
 struct CoronaStats: Decodable {
-    let data: [RegionStats];
-    let worldStats: RegionStats;
+    let data: [RegionStats]
+    let worldStats: RegionStats
 }

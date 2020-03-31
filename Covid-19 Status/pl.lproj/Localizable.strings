@@ -11,6 +11,7 @@
 "version %@" = "wesja %@";
 "COVID-19 Status: Error" = "COVID-19 Status: Błąd";
 "unknown cause" = "powód nieznany";
+"An error occured" = "Wystąpił błąd";
 
 "World" = "Świat";
 "Afghanistan" = "Afganistan";
