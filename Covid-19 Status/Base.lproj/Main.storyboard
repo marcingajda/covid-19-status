@@ -31,7 +31,7 @@
                                         <menuItem isSeparatorItem="YES" title="sdfsdf" id="VOq-y0-SEH"/>
                                         <menuItem title="Select region" id="MAg-rl-DVH">
                                             <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Select region" systemMenu="apple" autoenablesItems="NO" id="URq-Fm-ggV">
+                                            <menu key="submenu" title="Select region" systemMenu="apple" autoenablesItems="NO" id="URq-Fm-ggV" customClass="RegionsMenu" customModule="Covid_19_Status" customModuleProvider="target">
                                                 <items>
                                                     <menuItem title="None" enabled="NO" id="i8c-sB-7Tp">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
@@ -73,7 +73,7 @@
                         <outlet property="alertsMenuItem" destination="ljG-1J-Upa" id="6En-cd-cZ3"/>
                         <outlet property="deltaMenuItem" destination="5kV-Vb-QxS" id="WJ5-eC-Ydj"/>
                         <outlet property="menu" destination="uQy-DD-JDr" id="J7Q-go-iQk"/>
-                        <outlet property="regionMenu" destination="URq-Fm-ggV" id="SeA-ks-eI3"/>
+                        <outlet property="regionsMenu" destination="URq-Fm-ggV" id="SeA-ks-eI3"/>
                         <outlet property="retryMenuItem" destination="6jx-Ii-JOn" id="3vl-jR-B9e"/>
                     </connections>
                 </customObject>

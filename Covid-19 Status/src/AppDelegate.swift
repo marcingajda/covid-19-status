@@ -24,25 +24,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var timer: Timer?
 
     @IBOutlet weak var menu: NSMenu?
-    @IBOutlet weak var regionMenu: NSMenu?
+    @IBOutlet weak var regionsMenu: RegionsMenu?
     @IBOutlet weak var retryMenuItem: NSMenuItem?
     @IBOutlet weak var deltaMenuItem: NSMenuItem?
     @IBOutlet weak var alertsMenuItem: NSMenuItem?
 
     var currentRegion: String = WORLD
     var alertsEnabled: Bool = false
-
-    func findRegionMenuItem(regionName: String) -> NSMenuItem? {
-        return regionMenu?.item(withTitle: NSLocalizedString(regionName, comment: ""))
-    }
-
-    func setCurrentRegion(newRegion: String) {
-        findRegionMenuItem(regionName: currentRegion)?.state = .off
-        findRegionMenuItem(regionName: newRegion)?.state = .on
-
-        currentRegion = newRegion
-        settings.set(newRegion, forKey: "country")
-    }
 
     func setAlertsEnabled(enabled: Bool) {
         alertsEnabled = enabled
@@ -61,38 +49,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             : lastCoronaStats.data.first(where: { (countryStats) -> Bool in
                 countryStats.country == self.currentRegion
             }) ?? lastCoronaStats.worldStats
-    }
-
-    func sortCountries(data: [RegionStats]) -> [RegionStats] {
-        return data.sorted(by: {
-            let name1 = NSLocalizedString($0.country, comment: "")
-            let name2 = NSLocalizedString($1.country, comment: "")
-
-            return name1.localizedCompare(name2) == .orderedAscending
-        })
-    }
-
-    func updateRegionMenu(coronaStats: CoronaStats) {
-        self.regionMenu?.removeAllItems()
-
-        let worldItem = NSMenuItem()
-        worldItem.title = NSLocalizedString(WORLD, comment: "menu")
-        worldItem.action = #selector(self.changeRegionHandler(sender:))
-        worldItem.representedObject = WORLD
-        self.regionMenu?.addItem(worldItem)
-
-        self.regionMenu?.addItem(NSMenuItem.separator())
-
-        for countryStats in sortCountries(data: coronaStats.data) {
-            //print(countryStats.country)
-            let countryItem = NSMenuItem()
-            countryItem.title = NSLocalizedString(countryStats.country, comment: "menu")
-            countryItem.action = #selector(self.changeRegionHandler(sender:))
-            countryItem.representedObject = countryStats.country
-            self.regionMenu?.addItem(countryItem)
-        }
-
-        findRegionMenuItem(regionName: currentRegion)?.state = .on
     }
 
     func refreshView(stats: RegionStats) {
@@ -117,22 +73,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBAction func alertsSwitchHandler(_ sender: NSMenuItem) {
         setAlertsEnabled(enabled: !alertsEnabled)
-    }
-
-    @objc func changeRegionHandler(sender: NSMenuItem) {
-        guard let region = sender.representedObject as? String else {
-            showError(text: "Button returned not a string")
-            return
-        }
-
-        setCurrentRegion(newRegion: region)
-
-        guard let currentStats = self.getCurrentRegionStats() else {
-            print("No stats data available")
-            return
-        }
-
-        refreshView(stats: currentStats)
     }
 
     func showErrorState(message: String) {
@@ -166,9 +106,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 return
             }
 
-            if self.regionMenu?.items.count != coronaStats.data.count + 2 {
+            if self.regionsMenu?.items.count != coronaStats.data.count + 2 {
                 print("Updating region menu")
-                self.updateRegionMenu(coronaStats: coronaStats)
+                self.regionsMenu?.updateList(regionsStats: coronaStats.data)
             }
 
             self.retryMenuItem?.isHidden = true
@@ -206,10 +146,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
 
+        guard let regionsMenu = regionsMenu else {
+            showError(text: "The app UI is broken (regions menu)")
+            NSApp.terminate(nil)
+            return
+        }
+
         button = statusBarItem.button
         statusBarItem.menu = menu
 
-        setCurrentRegion(newRegion: settings.string(forKey: "country") ?? WORLD)
+        regionsMenu.onRegionChange { region in
+            self.currentRegion = region
+
+            guard let stats = self.getCurrentRegionStats() else {
+                return
+            }
+
+            self.refreshView(stats: stats)
+        }
+
+        regionsMenu.setCurrent(
+            region: settings.string(forKey: "country") ?? WORLD
+        )
+
         setAlertsEnabled(enabled: settings.bool(forKey: "alerts"))
 
         doUpdate()

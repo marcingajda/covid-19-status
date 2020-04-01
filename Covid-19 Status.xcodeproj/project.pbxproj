@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30A829024345C9F0023B9C3 /* RegionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A828F24345C9F0023B9C3 /* RegionsMenu.swift */; };
 		D30B91F02433373E00E21774 /* showError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B91EF2433373E00E21774 /* showError.swift */; };
 		D3C1A3552427BF8900B69DCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A3542427BF8900B69DCB /* AppDelegate.swift */; };
 		D3C1A3592427BF8B00B69DCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3C1A3582427BF8B00B69DCB /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D30A828F24345C9F0023B9C3 /* RegionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsMenu.swift; sourceTree = "<group>"; };
 		D30B91EF2433373E00E21774 /* showError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showError.swift; sourceTree = "<group>"; };
 		D3C1A3512427BF8900B69DCB /* Covid-19 Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid-19 Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C1A3542427BF8900B69DCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				D3C1A3682429908300B69DCB /* StatsFormatter.swift */,
 				D3C1A36A2429921800B69DCB /* fetchData.swift */,
 				D3C1A36D2429942200B69DCB /* Notificator.swift */,
+				D30A828F24345C9F0023B9C3 /* RegionsMenu.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D30A829024345C9F0023B9C3 /* RegionsMenu.swift in Sources */,
 				D3C1A36E2429942200B69DCB /* Notificator.swift in Sources */,
 				D3C1A3692429908300B69DCB /* StatsFormatter.swift in Sources */,
 				D3C1A36B2429921800B69DCB /* fetchData.swift in Sources */,
