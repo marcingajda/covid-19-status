@@ -80,10 +80,12 @@ class RegionsMenu: NSMenu {
             regionItem.target = self
             regionItem.representedObject = region
             addItem(regionItem)
-            
+
             #if DEBUG
-            if Locale.current.languageCode != "en" && NSLocalizedString(region, comment: "menu") == region {
-                print("MISSING TRANS?", regionItem.title)
+            if Locale.current.languageCode != "en" {
+                if NSLocalizedString(region, value: "__mising__", comment: "menu") == "__mising__" {
+                    print("MISSING TRANS:", regionItem.title)
+                }
             }
             #endif
         }
