@@ -23,6 +23,13 @@ The data is fetched from [corona-stats.online REST API](https://corona-stats.onl
 
 ![Notification screenshot](./screenshots/alert.png "Example notification")
 
+## Follow many regions at once
+
+Use those commands in your terminal to open multiple copies of the widget:
+
+    cd ~/Applications # or wherever is the app
+    open -n -a "Covid-19 Status"
+
 ## Help and contribution
 
 Feel free to send pull requests and to create issues.
