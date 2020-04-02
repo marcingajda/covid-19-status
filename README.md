@@ -2,7 +2,7 @@
 
 A small widget that shows the ongoing COVID-19 pandemic stats in your MacOS computer menu bar
 
-👉 [Download the app latest version here][DOWNLOAD]
+👉 **[Download the app latest version here][DOWNLOAD]**
 
 ## Features
 
@@ -13,7 +13,7 @@ A small widget that shows the ongoing COVID-19 pandemic stats in your MacOS comp
 
 ## Data source
 
-All data is fetched from [corona-stats.online REST API](https://corona-stats.online/?source=2) every three minutes.
+The data is fetched from [corona-stats.online REST API](https://corona-stats.online/?source=2) every three minutes.
 
 ## Screenshots
 
@@ -27,15 +27,9 @@ All data is fetched from [corona-stats.online REST API](https://corona-stats.onl
 
 Feel free to send pull requests and to create issues.
 
-## Disclaimer
-
-This a project was started by a person who never wrote in Swift or used Xcode before. 
-
-The code may be messy and far from Swift coding standards.
-
 ## License
 
 [MIT licensed](./LICENSE)
 
 
-[DOWNLOAD]: https://github.com/marcingajda/covid-19-status/releases/download/v1.0.0/Covid-19_Status_v1.0.0.zip
+[DOWNLOAD]: https://github.com/marcingajda/covid-19-status/releases/download/v1.1.0/Covid-19.Status.v1.1.0.dmg
