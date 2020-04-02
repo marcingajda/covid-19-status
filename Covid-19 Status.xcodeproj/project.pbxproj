@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D30A829024345C9F0023B9C3 /* RegionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A828F24345C9F0023B9C3 /* RegionsMenu.swift */; };
 		D30B91F02433373E00E21774 /* showError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B91EF2433373E00E21774 /* showError.swift */; };
+		D317DE6324356D3900BD100A /* distribution in Resources */ = {isa = PBXBuildFile; fileRef = D317DE6224356D3900BD100A /* distribution */; };
 		D3C1A3552427BF8900B69DCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A3542427BF8900B69DCB /* AppDelegate.swift */; };
 		D3C1A3592427BF8B00B69DCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3C1A3582427BF8B00B69DCB /* Assets.xcassets */; };
 		D3C1A35C2427BF8B00B69DCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C1A35A2427BF8B00B69DCB /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		D30A828F24345C9F0023B9C3 /* RegionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsMenu.swift; sourceTree = "<group>"; };
 		D30B91EF2433373E00E21774 /* showError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showError.swift; sourceTree = "<group>"; };
+		D317DE6224356D3900BD100A /* distribution */ = {isa = PBXFileReference; lastKnownFileType = folder; path = distribution; sourceTree = "<group>"; };
 		D3C1A3512427BF8900B69DCB /* Covid-19 Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid-19 Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C1A3542427BF8900B69DCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3C1A3582427BF8B00B69DCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		D3C1A3482427BF8900B69DCB = {
 			isa = PBXGroup;
 			children = (
+				D317DE6224356D3900BD100A /* distribution */,
 				D3EB91C424303F0C00514AB3 /* LICENSE */,
 				D3EB91C124303D0F00514AB3 /* screenshots */,
 				D3C1A373242BD0E000B69DCB /* README.md */,
@@ -164,6 +167,7 @@
 			files = (
 				D3EB91C224303D1000514AB3 /* screenshots in Resources */,
 				D3C1A3592427BF8B00B69DCB /* Assets.xcassets in Resources */,
+				D317DE6324356D3900BD100A /* distribution in Resources */,
 				D3C1A377242BD81700B69DCB /* Localizable.strings in Resources */,
 				D3C1A35C2427BF8B00B69DCB /* Main.storyboard in Resources */,
 				D3EB91C524303F0C00514AB3 /* LICENSE in Resources */,
@@ -354,7 +358,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid-19 Status/Covid_19_Status.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RGC8BFYMY4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Covid-19 Status/Info.plist";
@@ -362,7 +366,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.mgdevelop.covid-19-status";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -376,7 +380,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid-19 Status/Covid_19_Status.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RGC8BFYMY4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Covid-19 Status/Info.plist";
@@ -384,7 +388,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.mgdevelop.covid-19-status";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
