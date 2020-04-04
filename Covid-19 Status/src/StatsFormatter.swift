@@ -60,7 +60,7 @@ class StatsFormatter {
         let countryName = NSLocalizedString(stats.country, comment: "")
 
         return String(
-            format: NSLocalizedString("COVID-19 (%@): Confirmed | Deaths | Recured", comment: ""),
+            format: NSLocalizedString("COVID-19 (%@)\nConfirmed | Deaths | Recured", comment: ""),
             countryName
         )
     }

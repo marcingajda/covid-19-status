@@ -6,9 +6,11 @@
   Copyright © 2020 Marcin Gajda. All rights reserved."
 */
 
-"COVID-19 (%@): Confirmed | Deaths | Recured" = "COVID-19 (%@): Przypadki | Zgony | Wyzdrowienia";
+"COVID-19 Status" = "COVID-19 Status";
+"COVID-19 (%@)\nConfirmed | Deaths | Recured" = "COVID-19 (%@)\nPrzypadki | Zgony | Wyzdrowienia";
 "Today: +%@ confirmed +%@ deaths" = "Dzisiaj: +%@ przypadki +%@ zgony";
 "version %@" = "wesja %@";
+"Loading..." = "Ładowanie...";
 "COVID-19 Status: Error" = "COVID-19 Status: Błąd";
 "unknown cause" = "powód nieznany";
 "An error occured" = "Wystąpił błąd";

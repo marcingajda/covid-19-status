@@ -17,12 +17,12 @@ class AboutViewController: NSViewController {
         super.viewDidLoad()
 
         guard let version = version else {
-            showError(text: "The app UI is broken (version)")
+            criticalError(message: "The app UI is broken (version)")
             return
         }
 
         guard let sourceLink = sourceLink else {
-            showError(text: "The app UI is broken (source link)")
+            criticalError(message: "The app UI is broken (source link)")
             return
         }
 
@@ -45,12 +45,12 @@ class AboutViewController: NSViewController {
 
     @IBAction func sourceLinkHandler(sender: NSClickGestureRecognizer) {
         guard let link = sourceLink?.stringValue else {
-            showError(text: "Can't open the URL address.")
+            criticalError(message: "Can't open the URL address.")
             return
         }
 
         guard let urlAddress = URL(string: link) else {
-            showError(text: "Can't open the URL address.")
+            criticalError(message: "Can't open the URL address.")
             return
         }
 

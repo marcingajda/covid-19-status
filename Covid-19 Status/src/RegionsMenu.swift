@@ -50,7 +50,7 @@ class RegionsMenu: NSMenu {
 
     @objc func changeRegionHandler(sender: NSMenuItem) {
         guard let region = sender.representedObject as? String else {
-            showError(text: "Button returned not a string")
+            criticalError(message: "Button returned not a string")
             return
         }
 

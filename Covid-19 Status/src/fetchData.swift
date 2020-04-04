@@ -12,7 +12,7 @@ var API = "https://corona-stats.online?format=json&source=2"
 
 func fetchData(completion: @escaping ((CoronaStats?, String?) -> Void)) {
     guard let url = NSURL(string: API)?.absoluteURL else {
-        showError(text: "API address is not an URL")
+        criticalError(message: "API address is not an URL")
         return
     }
 

@@ -1,5 +1,5 @@
 //
-//  showError.swift
+//  criticalError.swift
 //  Covid-19 Status
 //
 //  Created by Marcin Gajda on 29/03/2020.
@@ -9,11 +9,15 @@
 import Foundation
 import Cocoa
 
-func showError(text: String) {
+func criticalError(message: String, terminate: Bool = true) {
     let alert = NSAlert()
     alert.messageText = NSLocalizedString("An error occured", comment: "")
-    alert.informativeText = text
+    alert.informativeText = message
     alert.alertStyle = .critical
     alert.addButton(withTitle: "OK")
     alert.runModal()
+
+    if terminate {
+        NSApp.terminate(nil)
+    }
 }

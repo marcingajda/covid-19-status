@@ -23,6 +23,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var lastCoronaStats: CoronaStats?
     var timer: Timer?
 
+    var display: StatsDisplay = StatsDisplay()
+
     @IBOutlet weak var menu: NSMenu?
     @IBOutlet weak var regionsMenu: RegionsMenu?
     @IBOutlet weak var retryMenuItem: NSMenuItem?
@@ -51,57 +53,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }) ?? lastCoronaStats.worldStats
     }
 
-    func refreshView(stats: RegionStats) {
-        let formatter = StatsFormatter(stats: stats)
-
-        DispatchQueue.main.async {
-            guard let deltaMenuItem = self.deltaMenuItem else {
-                showError(text: "The 'deltaMenuItem' element does not exists")
-                return
-            }
-
-            guard let button = self.button else {
-                showError(text: "The 'button' element does not exists")
-                return
-            }
-
-            button.attributedTitle = formatter.getRegionStatus()
-            deltaMenuItem.title = formatter.getRegionDelta()
-            button.toolTip = formatter.getTooltip()
-        }
-    }
-
     @IBAction func alertsSwitchHandler(_ sender: NSMenuItem) {
         setAlertsEnabled(enabled: !alertsEnabled)
-    }
-
-    func showErrorState(message: String) {
-        DispatchQueue.main.async {
-            guard let deltaMenuItem = self.deltaMenuItem else {
-                showError(text: "The app UI is broken (delta menu item)")
-                NSApp.terminate(nil)
-                return
-            }
-
-            guard let button = self.button else {
-                showError(text: "The app UI is broken (button)")
-                NSApp.terminate(nil)
-                return
-            }
-
-            button.attributedTitle = menuBarTextFormatter(
-                label: NSLocalizedString("COVID-19 Status: Error", comment: "")
-            )
-            deltaMenuItem.title = message
-            button.toolTip = message
-        }
     }
 
     @objc func doUpdate() {
         print("Updating data")
         fetchData { coronaStats, error in
             guard let coronaStats = coronaStats else {
-                self.showErrorState(message: error ?? NSLocalizedString("unknown cause", comment: ""))
+                self.display.showError(message: error)
                 self.retryMenuItem?.isHidden = false
                 return
             }
@@ -119,7 +79,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 return
             }
 
-            self.refreshView(stats: currentStats)
+            self.display.showStats(region: currentStats)
             self.notificator.handle(stats: currentStats)
         }
     }
@@ -127,50 +87,45 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         PFMoveToApplicationsFolderIfNecessary()
 
-        let statusBar = NSStatusBar.system
-        statusBarItem = statusBar.statusItem(withLength: NSStatusItem.variableLength)
+        statusBarItem =  NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
         guard let statusBarItem = statusBarItem else {
-            showError(text: "The app UI is broken (status bar item)")
-            NSApp.terminate(nil)
-            return
-        }
-
-        guard statusBarItem.button != nil else {
-            showError(text: "Menu bar item was not created. Try removing some menu bar items")
-            NSApp.terminate(nil)
+            criticalError(message: "The app UI is broken (status bar item)")
             return
         }
 
         guard let menu = menu else {
-            showError(text: "The app UI is broken (menu)")
-            NSApp.terminate(nil)
+            criticalError(message: "The app UI is broken (menu)")
             return
         }
 
         guard let regionsMenu = regionsMenu else {
-            showError(text: "The app UI is broken (regions menu)")
-            NSApp.terminate(nil)
+            criticalError(message: "The app UI is broken (regions menu)")
             return
         }
 
-        button = statusBarItem.button
+        guard let deltaMenuItem = deltaMenuItem else {
+            criticalError(message: "The app UI is broken (delta menu item)")
+            return
+        }
+
+        guard let button = statusBarItem.button else {
+            criticalError(message: "Menu bar item was not created. Try removing some menu bar items")
+            return
+        }
+
         statusBarItem.menu = menu
+        display.setComponents(statusItem: button, deltaItem: deltaMenuItem)
 
         regionsMenu.onRegionChange { region in
             self.currentRegion = region
-
             guard let stats = self.getCurrentRegionStats() else {
                 return
             }
-
-            self.refreshView(stats: stats)
+            self.display.showStats(region: stats)
         }
 
-        regionsMenu.setCurrent(
-            region: settings.string(forKey: "country") ?? WORLD
-        )
-
+        regionsMenu.setCurrent(region: settings.string(forKey: "country") ?? WORLD)
         setAlertsEnabled(enabled: settings.bool(forKey: "alerts"))
 
         doUpdate()
@@ -196,7 +151,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         ) as? NSWindowController
 
         guard let aboutWindowController = aboutWindowController else {
-            showError(text: "The About window failed")
+            criticalError(message: "The About window failed", terminate: false)
             return
         }
 
@@ -204,6 +159,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func retryHandler(_ sender: AnyObject) {
+        display.showLoading()
         doUpdate()
     }
 }
