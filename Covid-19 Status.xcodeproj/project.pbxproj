@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		D30A829024345C9F0023B9C3 /* RegionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A828F24345C9F0023B9C3 /* RegionsMenu.swift */; };
 		D317DE6324356D3900BD100A /* distribution in Resources */ = {isa = PBXBuildFile; fileRef = D317DE6224356D3900BD100A /* distribution */; };
-		D317DE672436A5D000BD100A /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = D317DE662436A5D000BD100A /* PFMoveApplication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D317DE6A2436A8A300BD100A /* MoveApplication.strings in Resources */ = {isa = PBXBuildFile; fileRef = D317DE692436A8A300BD100A /* MoveApplication.strings */; };
 		D317DE6F2436B05600BD100A /* StatsDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D317DE6E2436B05600BD100A /* StatsDisplay.swift */; };
 		D317DE712436C04400BD100A /* criticalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D317DE702436C04400BD100A /* criticalError.swift */; };
+		D317DE7D2438BDB700BD100A /* LetsMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D317DE7C2438BDB700BD100A /* LetsMove.framework */; };
+		D317DE7E2438BDB700BD100A /* LetsMove.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D317DE7C2438BDB700BD100A /* LetsMove.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D3C1A3552427BF8900B69DCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A3542427BF8900B69DCB /* AppDelegate.swift */; };
 		D3C1A3592427BF8B00B69DCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3C1A3582427BF8B00B69DCB /* Assets.xcassets */; };
 		D3C1A35C2427BF8B00B69DCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C1A35A2427BF8B00B69DCB /* Main.storyboard */; };
@@ -26,15 +26,38 @@
 		D3EB91C524303F0C00514AB3 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D3EB91C424303F0C00514AB3 /* LICENSE */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D317DE782438BD5500BD100A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D317DE7F2438BDB700BD100A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D317DE7E2438BDB700BD100A /* LetsMove.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		D30A828F24345C9F0023B9C3 /* RegionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsMenu.swift; sourceTree = "<group>"; };
 		D317DE6224356D3900BD100A /* distribution */ = {isa = PBXFileReference; lastKnownFileType = folder; path = distribution; sourceTree = "<group>"; };
-		D317DE652436A5CF00BD100A /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
-		D317DE662436A5D000BD100A /* PFMoveApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
-		D317DE682436A64200BD100A /* PFMoveApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFMoveApplication.h; sourceTree = "<group>"; };
-		D317DE692436A8A300BD100A /* MoveApplication.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MoveApplication.strings; sourceTree = "<group>"; };
 		D317DE6E2436B05600BD100A /* StatsDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsDisplay.swift; sourceTree = "<group>"; };
 		D317DE702436C04400BD100A /* criticalError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = criticalError.swift; sourceTree = "<group>"; };
+		D317DE742438BBC200BD100A /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		D317DE762438BCD800BD100A /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile.resolved; path = "/Users/marcin/Documents/Projects/covid-19-status/Covid-19 Status/Cartfile.resolved"; sourceTree = "<absolute>"; };
+		D317DE772438BCE900BD100A /* Carthage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Carthage; path = "/Users/marcin/Documents/Projects/covid-19-status/Covid-19 Status/Carthage"; sourceTree = "<absolute>"; };
+		D317DE7C2438BDB700BD100A /* LetsMove.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LetsMove.framework; path = Carthage/Build/Mac/LetsMove.framework; sourceTree = "<group>"; };
 		D3C1A3512427BF8900B69DCB /* Covid-19 Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid-19 Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C1A3542427BF8900B69DCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3C1A3582427BF8B00B69DCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,48 +82,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D317DE7D2438BDB700BD100A /* LetsMove.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D317DE642436A59F00BD100A /* LetsMove */ = {
+		D317DE7B2438BDB700BD100A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D317DE6C2436AFB100BD100A /* pl.lproj */,
-				D317DE662436A5D000BD100A /* PFMoveApplication.m */,
-				D317DE682436A64200BD100A /* PFMoveApplication.h */,
+				D317DE7C2438BDB700BD100A /* LetsMove.framework */,
 			);
-			path = LetsMove;
-			sourceTree = "<group>";
-		};
-		D317DE6B2436A97100BD100A /* vendors */ = {
-			isa = PBXGroup;
-			children = (
-				D317DE652436A5CF00BD100A /* BridgingHeader.h */,
-				D317DE642436A59F00BD100A /* LetsMove */,
-			);
-			path = vendors;
-			sourceTree = "<group>";
-		};
-		D317DE6C2436AFB100BD100A /* pl.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				D317DE692436A8A300BD100A /* MoveApplication.strings */,
-			);
-			path = pl.lproj;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D3C1A3482427BF8900B69DCB = {
 			isa = PBXGroup;
 			children = (
-				D317DE6224356D3900BD100A /* distribution */,
-				D3EB91C424303F0C00514AB3 /* LICENSE */,
-				D3EB91C124303D0F00514AB3 /* screenshots */,
-				D3C1A373242BD0E000B69DCB /* README.md */,
 				D3C1A3532427BF8900B69DCB /* Covid-19 Status */,
+				D317DE772438BCE900BD100A /* Carthage */,
+				D317DE6224356D3900BD100A /* distribution */,
+				D3EB91C124303D0F00514AB3 /* screenshots */,
+				D317DE762438BCD800BD100A /* Cartfile.resolved */,
+				D317DE742438BBC200BD100A /* Cartfile */,
+				D3EB91C424303F0C00514AB3 /* LICENSE */,
+				D3C1A373242BD0E000B69DCB /* README.md */,
 				D3C1A3522427BF8900B69DCB /* Products */,
+				D317DE7B2438BDB700BD100A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,7 +137,6 @@
 		D3C1A36C2429934700B69DCB /* src */ = {
 			isa = PBXGroup;
 			children = (
-				D317DE6B2436A97100BD100A /* vendors */,
 				D3C1A3542427BF8900B69DCB /* AppDelegate.swift */,
 				D3C1A371242AE35700B69DCB /* AboutViewController.swift */,
 				D30A828F24345C9F0023B9C3 /* RegionsMenu.swift */,
@@ -153,6 +161,8 @@
 				D3C1A34E2427BF8900B69DCB /* Frameworks */,
 				D3C1A34F2427BF8900B69DCB /* Resources */,
 				D30B91EC2432AC3800E21774 /* ShellScript */,
+				D317DE782438BD5500BD100A /* CopyFiles */,
+				D317DE7F2438BDB700BD100A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,7 +217,6 @@
 				D3C1A3592427BF8B00B69DCB /* Assets.xcassets in Resources */,
 				D317DE6324356D3900BD100A /* distribution in Resources */,
 				D3C1A377242BD81700B69DCB /* Localizable.strings in Resources */,
-				D317DE6A2436A8A300BD100A /* MoveApplication.strings in Resources */,
 				D3C1A35C2427BF8B00B69DCB /* Main.storyboard in Resources */,
 				D3EB91C524303F0C00514AB3 /* LICENSE in Resources */,
 			);
@@ -242,7 +251,6 @@
 			files = (
 				D30A829024345C9F0023B9C3 /* RegionsMenu.swift in Sources */,
 				D3C1A36E2429942200B69DCB /* Notificator.swift in Sources */,
-				D317DE672436A5D000BD100A /* PFMoveApplication.m in Sources */,
 				D317DE6F2436B05600BD100A /* StatsDisplay.swift in Sources */,
 				D3C1A3692429908300B69DCB /* StatsFormatter.swift in Sources */,
 				D3C1A36B2429921800B69DCB /* fetchData.swift in Sources */,
@@ -403,6 +411,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RGC8BFYMY4;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "Covid-19 Status/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -411,7 +423,7 @@
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.mgdevelop.covid-19-status";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Covid-19 Status/src/vendors/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -428,6 +440,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RGC8BFYMY4;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "Covid-19 Status/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,7 +452,7 @@
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.mgdevelop.covid-19-status";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Covid-19 Status/src/vendors/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

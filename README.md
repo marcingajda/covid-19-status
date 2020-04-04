@@ -34,6 +34,13 @@ Use those commands in your terminal to open multiple copies of the widget:
 
 Feel free to send pull requests and to create issues.
 
+## Development
+
+To run this project in Xcode you must first install Carthage dependiences
+
+    brew install carthage
+    carthage bootstrap
+
 ## License
 
 [MIT licensed](./LICENSE)

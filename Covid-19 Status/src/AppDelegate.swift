@@ -8,6 +8,7 @@
 
 import Cocoa
 import Foundation
+import LetsMove
 
 var WORLD = "World"
 
