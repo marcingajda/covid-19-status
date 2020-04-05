@@ -10,7 +10,7 @@ import Cocoa
 
 class RegionsMenu: NSMenu {
     var regions: [String] = []
-    var currentRegion: String = WORLD
+    var currentRegion: String = SpecialRegions.world.rawValue
     let settings = UserDefaults.standard
     var regionChangeCallback: ((String) -> Void)?
 
@@ -39,6 +39,10 @@ class RegionsMenu: NSMenu {
     }
 
     func updateList(regionsStats: [RegionStats]) {
+        if regions.count == regionsStats.count {
+            return
+        }
+
         regions.removeAll()
 
         for region in sortRegionsStats(data: regionsStats) {
@@ -65,10 +69,10 @@ class RegionsMenu: NSMenu {
         self.removeAllItems()
 
         let worldItem = NSMenuItem()
-        worldItem.title = NSLocalizedString(WORLD, comment: "menu")
+        worldItem.title = NSLocalizedString(SpecialRegions.world.rawValue, comment: "menu")
         worldItem.action = #selector(changeRegionHandler(sender:))
         worldItem.target = self
-        worldItem.representedObject = WORLD
+        worldItem.representedObject = SpecialRegions.world.rawValue
         self.addItem(worldItem)
 
         addItem(NSMenuItem.separator())

@@ -13,12 +13,14 @@
 		D317DE712436C04400BD100A /* criticalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D317DE702436C04400BD100A /* criticalError.swift */; };
 		D317DE7D2438BDB700BD100A /* LetsMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D317DE7C2438BDB700BD100A /* LetsMove.framework */; };
 		D317DE7E2438BDB700BD100A /* LetsMove.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D317DE7C2438BDB700BD100A /* LetsMove.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3193A282438CF340035FBD5 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3193A272438CF340035FBD5 /* DataProvider.swift */; };
+		D3193A2A2438D0830035FBD5 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3193A292438D0830035FBD5 /* constants.swift */; };
+		D3193A2C2438D5580035FBD5 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3193A2B2438D5580035FBD5 /* ApiClient.swift */; };
 		D3C1A3552427BF8900B69DCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A3542427BF8900B69DCB /* AppDelegate.swift */; };
 		D3C1A3592427BF8B00B69DCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3C1A3582427BF8B00B69DCB /* Assets.xcassets */; };
 		D3C1A35C2427BF8B00B69DCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C1A35A2427BF8B00B69DCB /* Main.storyboard */; };
-		D3C1A3672429904F00B69DCB /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A3662429904F00B69DCB /* Types.swift */; };
+		D3C1A3672429904F00B69DCB /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A3662429904F00B69DCB /* types.swift */; };
 		D3C1A3692429908300B69DCB /* StatsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A3682429908300B69DCB /* StatsFormatter.swift */; };
-		D3C1A36B2429921800B69DCB /* fetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A36A2429921800B69DCB /* fetchData.swift */; };
 		D3C1A36E2429942200B69DCB /* Notificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A36D2429942200B69DCB /* Notificator.swift */; };
 		D3C1A372242AE35700B69DCB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A371242AE35700B69DCB /* AboutViewController.swift */; };
 		D3C1A377242BD81700B69DCB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3C1A379242BD81700B69DCB /* Localizable.strings */; };
@@ -58,15 +60,17 @@
 		D317DE762438BCD800BD100A /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile.resolved; path = "/Users/marcin/Documents/Projects/covid-19-status/Covid-19 Status/Cartfile.resolved"; sourceTree = "<absolute>"; };
 		D317DE772438BCE900BD100A /* Carthage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Carthage; path = "/Users/marcin/Documents/Projects/covid-19-status/Covid-19 Status/Carthage"; sourceTree = "<absolute>"; };
 		D317DE7C2438BDB700BD100A /* LetsMove.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LetsMove.framework; path = Carthage/Build/Mac/LetsMove.framework; sourceTree = "<group>"; };
+		D3193A272438CF340035FBD5 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		D3193A292438D0830035FBD5 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		D3193A2B2438D5580035FBD5 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		D3C1A3512427BF8900B69DCB /* Covid-19 Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid-19 Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C1A3542427BF8900B69DCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3C1A3582427BF8B00B69DCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3C1A35B2427BF8B00B69DCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3C1A35D2427BF8B00B69DCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3C1A35E2427BF8B00B69DCB /* Covid_19_Poland.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Covid_19_Poland.entitlements; sourceTree = "<group>"; };
-		D3C1A3662429904F00B69DCB /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		D3C1A3662429904F00B69DCB /* types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = types.swift; sourceTree = "<group>"; };
 		D3C1A3682429908300B69DCB /* StatsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsFormatter.swift; sourceTree = "<group>"; };
-		D3C1A36A2429921800B69DCB /* fetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetchData.swift; sourceTree = "<group>"; };
 		D3C1A36D2429942200B69DCB /* Notificator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificator.swift; sourceTree = "<group>"; };
 		D3C1A371242AE35700B69DCB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D3C1A373242BD0E000B69DCB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -95,6 +99,35 @@
 				D317DE7C2438BDB700BD100A /* LetsMove.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3193A2D2439BA0A0035FBD5 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				D3193A272438CF340035FBD5 /* DataProvider.swift */,
+				D3193A2B2438D5580035FBD5 /* ApiClient.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		D3193A2E2439BA270035FBD5 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				D317DE702436C04400BD100A /* criticalError.swift */,
+				D3C1A3682429908300B69DCB /* StatsFormatter.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		D3193A2F2439BA440035FBD5 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				D3C1A371242AE35700B69DCB /* AboutViewController.swift */,
+				D30A828F24345C9F0023B9C3 /* RegionsMenu.swift */,
+				D317DE6E2436B05600BD100A /* StatsDisplay.swift */,
+				D3C1A36D2429942200B69DCB /* Notificator.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 		D3C1A3482427BF8900B69DCB = {
@@ -137,15 +170,12 @@
 		D3C1A36C2429934700B69DCB /* src */ = {
 			isa = PBXGroup;
 			children = (
+				D3193A2F2439BA440035FBD5 /* components */,
+				D3193A2E2439BA270035FBD5 /* utils */,
+				D3193A2D2439BA0A0035FBD5 /* data */,
 				D3C1A3542427BF8900B69DCB /* AppDelegate.swift */,
-				D3C1A371242AE35700B69DCB /* AboutViewController.swift */,
-				D30A828F24345C9F0023B9C3 /* RegionsMenu.swift */,
-				D317DE6E2436B05600BD100A /* StatsDisplay.swift */,
-				D3C1A3682429908300B69DCB /* StatsFormatter.swift */,
-				D3C1A36D2429942200B69DCB /* Notificator.swift */,
-				D317DE702436C04400BD100A /* criticalError.swift */,
-				D3C1A36A2429921800B69DCB /* fetchData.swift */,
-				D3C1A3662429904F00B69DCB /* Types.swift */,
+				D3C1A3662429904F00B69DCB /* types.swift */,
+				D3193A292438D0830035FBD5 /* constants.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -251,10 +281,12 @@
 			files = (
 				D30A829024345C9F0023B9C3 /* RegionsMenu.swift in Sources */,
 				D3C1A36E2429942200B69DCB /* Notificator.swift in Sources */,
+				D3193A282438CF340035FBD5 /* DataProvider.swift in Sources */,
 				D317DE6F2436B05600BD100A /* StatsDisplay.swift in Sources */,
+				D3193A2A2438D0830035FBD5 /* constants.swift in Sources */,
 				D3C1A3692429908300B69DCB /* StatsFormatter.swift in Sources */,
-				D3C1A36B2429921800B69DCB /* fetchData.swift in Sources */,
-				D3C1A3672429904F00B69DCB /* Types.swift in Sources */,
+				D3193A2C2438D5580035FBD5 /* ApiClient.swift in Sources */,
+				D3C1A3672429904F00B69DCB /* types.swift in Sources */,
 				D3C1A3552427BF8900B69DCB /* AppDelegate.swift in Sources */,
 				D3C1A372242AE35700B69DCB /* AboutViewController.swift in Sources */,
 				D317DE712436C04400BD100A /* criticalError.swift in Sources */,
