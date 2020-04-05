@@ -116,13 +116,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem?.menu = menu
         display.setComponents(statusItem: button, deltaItem: deltaMenuItem)
 
-        let prefferedRegion = settings.string(forKey: "country")
-        regionsMenu.setCurrent(region: prefferedRegion ?? SpecialRegions.world.rawValue)
-
         setAlertsEnabled(enabled: settings.bool(forKey: "alerts"))
 
         regionsMenu.onRegionChange(callback: onRegionChange)
         provider = DataProvider(onSuccess: onUpdateSuccess, onError: onUpdateFailure)
+
+        let prefferedRegion = settings.string(forKey: "country")
+        regionsMenu.setCurrent(region: prefferedRegion ?? SpecialRegions.world.rawValue)
 
         provider?.doUpdate()
         provider?.startTimer()
