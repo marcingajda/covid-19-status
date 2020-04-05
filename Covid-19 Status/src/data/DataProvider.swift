@@ -36,7 +36,7 @@ class DataProvider: NSObject {
 
     func startTimer() {
         let prefferedInterval = settings.double(forKey: SettingsKey.fetchInterval.rawValue)
-        let interval = max(prefferedInterval, 1)
+        let interval = max(prefferedInterval, 3)
 
         if let timer = timer {
             timer.invalidate()
