@@ -25,7 +25,7 @@ class RegionsMenu: NSMenu {
         findItem(name: region)?.state = .on
 
         currentRegion = region
-        settings.set(region, forKey: "country")
+        settings.set(region, forKey: SettingsKey.selectedRegion.rawValue)
         regionChangeCallback?(region)
     }
 

@@ -33,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         alertsEnabled = enabled
         notificator.isEnabled = enabled
         alertsMenuItem?.state = enabled ? .on : .off
-        settings.set(enabled, forKey: "alerts")
+        settings.set(enabled, forKey: SettingsKey.alertsEnabled.rawValue)
     }
 
     @IBAction func alertsSwitchHandler(_ sender: NSMenuItem) {
@@ -116,12 +116,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem?.menu = menu
         display.setComponents(statusItem: button, deltaItem: deltaMenuItem)
 
-        setAlertsEnabled(enabled: settings.bool(forKey: "alerts"))
+        setAlertsEnabled(enabled: settings.bool(forKey: SettingsKey.alertsEnabled.rawValue))
 
         regionsMenu.onRegionChange(callback: onRegionChange)
         provider = DataProvider(onSuccess: onUpdateSuccess, onError: onUpdateFailure)
 
-        let prefferedRegion = settings.string(forKey: "country")
+        let prefferedRegion = settings.string(forKey: SettingsKey.selectedRegion.rawValue)
         regionsMenu.setCurrent(region: prefferedRegion ?? SpecialRegions.world.rawValue)
 
         provider?.doUpdate()
