@@ -17,7 +17,7 @@ class Notificator {
 
         let notification = NSUserNotification()
         notification.identifier = formatter.getUniqueId()
-        notification.title = "COVID-19 Update (\(stats.country))"
+        notification.title = "COVID-19 Update (\(NSLocalizedString(stats.country, comment: "")))"
         notification.subtitle = formatter.getRegionStatus().string
         notification.informativeText = formatter.getRegionDelta()
         notification.soundName = NSUserNotificationDefaultSoundName
