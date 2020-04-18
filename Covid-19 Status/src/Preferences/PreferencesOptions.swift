@@ -47,5 +47,5 @@ class PreferencesOptions {
 
     static var defaultAlertsStatus = true
 
-    static var defaultFormatMethod = StatsFormatMethod.long
+    static var defaultFormatMethod = StatsFormatMethod.short
 }
