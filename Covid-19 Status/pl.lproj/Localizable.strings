@@ -14,6 +14,20 @@
 "COVID-19 Status: Error" = "COVID-19 Status: Błąd";
 "unknown cause" = "powód nieznany";
 "An error occured" = "Wystąpił błąd";
+"(empty)" = "(puste)";
+
+"None" = "Brak";
+"3 entries" = "3 wpisy";
+"5 entries" = "5 wpisów";
+"10 entries" = "10 wpisów";
+"20 entries" = "20 wpisów";
+"30 entries" = "30 wpisów";
+
+"1 minute" = "1 minuta";
+"3 minute" = "3 minuty";
+"10 minute" = "10 minut";
+"30 minute" = "30 minut";
+"60 minute" = "60 minut";
 
 "World" = "Świat";
 "Afghanistan" = "Afganistan";

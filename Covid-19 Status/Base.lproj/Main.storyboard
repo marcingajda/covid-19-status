@@ -14,7 +14,7 @@
                         <items>
                             <menuItem title="Covid-19 Status" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Covid-19 Status" systemMenu="apple" autoenablesItems="NO" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Covid-19 Status" systemMenu="apple" autoenablesItems="NO" id="uQy-DD-JDr" customClass="MainMenu" customModule="Covid_19_Status" customModuleProvider="target">
                                     <items>
                                         <menuItem title="Loading" enabled="NO" id="5kV-Vb-QxS" userLabel="Delta">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -22,16 +22,13 @@
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Retry now" hidden="YES" id="6jx-Ii-JOn" userLabel="Retry">
+                                        <menuItem title="Retry now" tag="1" hidden="YES" id="6jx-Ii-JOn" userLabel="Retry">
                                             <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="retryHandler:" target="Voe-Tx-rLC" id="b6B-Xa-VLi"/>
-                                            </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" title="sdfsdf" id="VOq-y0-SEH"/>
-                                        <menuItem title="Select region" id="MAg-rl-DVH">
+                                        <menuItem isSeparatorItem="YES" title="sdfsdf" id="VOq-y0-SEH" userLabel="_Separator"/>
+                                        <menuItem title="Select region" tag="2" id="MAg-rl-DVH">
                                             <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Select region" systemMenu="apple" autoenablesItems="NO" id="URq-Fm-ggV" customClass="RegionsMenu" customModule="Covid_19_Status" customModuleProvider="target">
+                                            <menu key="submenu" title="Select region" systemMenu="apple" autoenablesItems="NO" identifier="regions" id="URq-Fm-ggV" customClass="RegionsMenu" customModule="Covid_19_Status" customModuleProvider="target">
                                                 <items>
                                                     <menuItem title="None" enabled="NO" id="i8c-sB-7Tp">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
@@ -39,21 +36,29 @@
                                                 </items>
                                             </menu>
                                         </menuItem>
-                                        <menuItem title="Show notifications" id="ljG-1J-Upa" userLabel="Alerts">
+                                        <menuItem title="Last regions" tag="3" id="LV7-r5-pVW" userLabel="Last regions">
                                             <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="alertsSwitchHandler:" target="Voe-Tx-rLC" id="7gf-X9-j3L"/>
-                                            </connections>
+                                            <menu key="submenu" title="Last regions" systemMenu="apple" autoenablesItems="NO" identifier="history" id="ZRd-S3-NG4" userLabel="History Menu" customClass="HistoryMenu" customModule="Covid_19_Status" customModuleProvider="target">
+                                                <items>
+                                                    <menuItem title="None" enabled="NO" id="xrM-70-jyW">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="ERr-j9-glZ"/>
-                                        <menuItem title="About..." id="8AQ-8p-cQP" userLabel="About">
+                                        <menuItem isSeparatorItem="YES" id="ERr-j9-glZ" userLabel="_Separator"/>
+                                        <menuItem title="Show notifications" tag="4" id="ljG-1J-Upa" userLabel="Alerts">
                                             <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="showAboutWindow:" target="Voe-Tx-rLC" id="Ra7-ih-byy"/>
-                                            </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="RxK-Hd-snC"/>
-                                        <menuItem title="Quit" id="4sb-4s-VLi">
+                                        <menuItem title="Preferences..." tag="5" id="nsq-oj-T39" userLabel="Preferences">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="7VP-he-XEP" userLabel="_Separator"/>
+                                        <menuItem title="About..." tag="6" id="8AQ-8p-cQP" userLabel="About">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="RxK-Hd-snC" userLabel="_Separator"/>
+                                        <menuItem title="Quit" tag="7" id="4sb-4s-VLi">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
@@ -70,17 +75,13 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Covid_19_Status" customModuleProvider="target">
                     <connections>
-                        <outlet property="alertsMenuItem" destination="ljG-1J-Upa" id="6En-cd-cZ3"/>
-                        <outlet property="deltaMenuItem" destination="5kV-Vb-QxS" id="WJ5-eC-Ydj"/>
-                        <outlet property="menu" destination="uQy-DD-JDr" id="J7Q-go-iQk"/>
-                        <outlet property="regionsMenu" destination="URq-Fm-ggV" id="SeA-ks-eI3"/>
-                        <outlet property="retryMenuItem" destination="6jx-Ii-JOn" id="3vl-jR-B9e"/>
+                        <outlet property="mainMenu" destination="uQy-DD-JDr" id="IbE-53-ocL"/>
                     </connections>
                 </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80" y="143"/>
+            <point key="canvasLocation" x="69" y="54"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="wyT-T2-DDw">
@@ -103,16 +104,170 @@
             </objects>
             <point key="canvasLocation" x="68" y="500"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="6Ni-Ar-dEk">
+            <objects>
+                <windowController storyboardIdentifier="Preferences Window Controller" id="VRn-BJ-HZ9" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="fUu-Lr-91U">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="249" width="600" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+                        <connections>
+                            <outlet property="delegate" destination="VRn-BJ-HZ9" id="gYO-Xy-yNw"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="vwH-0y-gvg" kind="relationship" relationship="window.shadowedContentViewController" id="RET-Jq-qWu"/>
+                    </connections>
+                </windowController>
+                <customObject id="Ou9-Ub-wlF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="736" y="572"/>
+        </scene>
+        <!--Preferences View Controller-->
+        <scene sceneID="7Vl-fU-RNM">
+            <objects>
+                <viewController id="vwH-0y-gvg" customClass="PreferencesViewController" customModule="Covid_19_Status" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="y50-fD-1Y4">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="240"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <box title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="xdV-7Q-XdL">
+                                <rect key="frame" x="17" y="57" width="466" height="138"/>
+                                <view key="contentView" id="JNR-G6-axw">
+                                    <rect key="frame" x="3" y="3" width="460" height="132"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lPa-dF-B8f">
+                                            <rect key="frame" x="94" y="74" width="103" height="16"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Refresh interval:" id="51x-8i-TTI">
+                                                <font key="font" usesAppearanceFont="YES"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cdi-Xl-pSO" userLabel="interval">
+                                            <rect key="frame" x="208" y="68" width="155" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="uj9-TO-ySe"/>
+                                            </constraints>
+                                            <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="Me8-Wh-n6G" userLabel="selected">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" id="eTE-Pg-IyK"/>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <binding destination="tv1-P6-bvl" name="content" keyPath="arrangedObjects" id="7Nx-Ug-CsV"/>
+                                                <binding destination="tv1-P6-bvl" name="contentValues" keyPath="arrangedObjects.name" previousBinding="7Nx-Ug-CsV" id="PYR-ff-bPJ"/>
+                                                <binding destination="tv1-P6-bvl" name="selectedIndex" keyPath="selectionIndex" previousBinding="PYR-ff-bPJ" id="fq6-4d-wl1"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="awL-lD-0WT">
+                                            <rect key="frame" x="68" y="43" width="129" height="16"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Regions history size:" id="4Z9-8E-CNG">
+                                                <font key="font" usesAppearanceFont="YES"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ger-TX-vz9" userLabel="history">
+                                            <rect key="frame" x="208" y="37" width="155" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="9C8-iv-Yct"/>
+                                            </constraints>
+                                            <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="TFY-Xx-jVb" userLabel="selected">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" id="F9e-19-9MS"/>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <binding destination="mku-4l-b5M" name="content" keyPath="arrangedObjects" id="Cod-Qk-G6W"/>
+                                                <binding destination="mku-4l-b5M" name="contentValues" keyPath="arrangedObjects.name" previousBinding="Cod-Qk-G6W" id="IEZ-qN-Oif"/>
+                                                <binding destination="mku-4l-b5M" name="selectedIndex" keyPath="selectionIndex" previousBinding="IEZ-qN-Oif" id="BVn-aT-08O"/>
+                                            </connections>
+                                        </popUpButton>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ger-TX-vz9" firstAttribute="leading" secondItem="awL-lD-0WT" secondAttribute="trailing" constant="15" id="2Sm-vd-wdR"/>
+                                        <constraint firstItem="awL-lD-0WT" firstAttribute="centerY" secondItem="Ger-TX-vz9" secondAttribute="centerY" id="3KL-93-iFJ"/>
+                                        <constraint firstItem="Cdi-Xl-pSO" firstAttribute="leading" secondItem="JNR-G6-axw" secondAttribute="leading" constant="210" id="8n5-TW-p59"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ger-TX-vz9" secondAttribute="trailing" constant="20" id="LYj-GV-2x0"/>
+                                        <constraint firstItem="Ger-TX-vz9" firstAttribute="top" secondItem="Cdi-Xl-pSO" secondAttribute="bottom" constant="10" id="QWU-CZ-FjT"/>
+                                        <constraint firstItem="Cdi-Xl-pSO" firstAttribute="top" secondItem="JNR-G6-axw" secondAttribute="top" constant="40" id="ZTc-sd-Mdx"/>
+                                        <constraint firstItem="Ger-TX-vz9" firstAttribute="leading" secondItem="JNR-G6-axw" secondAttribute="leading" constant="210" id="apC-Ul-zw8"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Cdi-Xl-pSO" secondAttribute="trailing" constant="20" id="bld-zc-iri"/>
+                                        <constraint firstItem="lPa-dF-B8f" firstAttribute="centerY" secondItem="Cdi-Xl-pSO" secondAttribute="centerY" id="fBQ-PL-E1i"/>
+                                        <constraint firstItem="Cdi-Xl-pSO" firstAttribute="leading" secondItem="lPa-dF-B8f" secondAttribute="trailing" constant="15" id="gI4-Gf-b2B"/>
+                                        <constraint firstItem="lPa-dF-B8f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JNR-G6-axw" secondAttribute="leading" constant="20" id="qR8-gB-hD9"/>
+                                        <constraint firstItem="awL-lD-0WT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JNR-G6-axw" secondAttribute="leading" constant="20" id="vYX-xo-i6n"/>
+                                    </constraints>
+                                </view>
+                                <font key="titleFont" size="15" name=".AppleSystemUIFont"/>
+                            </box>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FSF-zm-3XY">
+                                <rect key="frame" x="18" y="203" width="209" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="COVID-19 Status Preferences" id="plv-g9-ghO">
+                                    <font key="font" metaFont="systemBold" size="14"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" id="WNV-Ue-m1j">
+                                <rect key="frame" x="399" y="13" width="87" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="CeK-V0-XNw">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissPreferencesWindow:" target="vwH-0y-gvg" id="IYc-4w-61W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="FSF-zm-3XY" firstAttribute="leading" secondItem="y50-fD-1Y4" secondAttribute="leading" constant="20" id="MjH-bW-CRC"/>
+                            <constraint firstItem="xdV-7Q-XdL" firstAttribute="top" secondItem="FSF-zm-3XY" secondAttribute="bottom" constant="10" id="N0g-IT-xqW"/>
+                            <constraint firstItem="WNV-Ue-m1j" firstAttribute="top" secondItem="xdV-7Q-XdL" secondAttribute="bottom" constant="20" id="TW1-Ws-wia"/>
+                            <constraint firstItem="xdV-7Q-XdL" firstAttribute="leading" secondItem="y50-fD-1Y4" secondAttribute="leading" constant="20" id="cvW-ui-YMc"/>
+                            <constraint firstItem="FSF-zm-3XY" firstAttribute="top" secondItem="y50-fD-1Y4" secondAttribute="top" constant="20" id="ivt-HN-drx"/>
+                            <constraint firstAttribute="trailing" secondItem="xdV-7Q-XdL" secondAttribute="trailing" constant="20" id="oIX-Jf-CTK"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FSF-zm-3XY" secondAttribute="trailing" constant="20" id="t4k-Ib-uhv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="historySelect" destination="mku-4l-b5M" id="Cuw-jA-OrT"/>
+                        <outlet property="intervalSelect" destination="tv1-P6-bvl" id="JkQ-gW-Ygn"/>
+                    </connections>
+                </viewController>
+                <customObject id="XnM-Pf-J0f" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <arrayController id="tv1-P6-bvl">
+                    <connections>
+                        <binding destination="vwH-0y-gvg" name="contentArray" keyPath="allowedIntervals" id="J9e-oa-lIH"/>
+                    </connections>
+                </arrayController>
+                <arrayController id="mku-4l-b5M">
+                    <connections>
+                        <binding destination="vwH-0y-gvg" name="contentArray" keyPath="allowedHistorySizes" id="QUf-8Q-t4p"/>
+                    </connections>
+                </arrayController>
+                <userDefaultsController representsSharedInstance="YES" id="nq6-EF-Mr7"/>
+            </objects>
+            <point key="canvasLocation" x="736" y="999"/>
+        </scene>
         <!--About View Controller-->
         <scene sceneID="HA7-2p-HnP">
             <objects>
                 <viewController id="28W-g1-JTY" customClass="AboutViewController" customModule="Covid_19_Status" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="uqg-Km-dXj">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="255"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="271"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="S3X-dL-ThM">
-                                <rect key="frame" x="20" y="187" width="48" height="48"/>
+                                <rect key="frame" x="20" y="203" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="t9d-iz-16R"/>
                                     <constraint firstAttribute="height" constant="48" id="ul3-zb-Sa2"/>
@@ -120,14 +275,14 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo" id="mYR-id-la8"/>
                             </imageView>
                             <box title="Box" titlePosition="noTitle" id="dPt-xi-xGS">
-                                <rect key="frame" x="17" y="58" width="316" height="116"/>
+                                <rect key="frame" x="17" y="57" width="316" height="133"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="bdw-Jd-BfF">
-                                    <rect key="frame" x="3" y="3" width="310" height="110"/>
+                                    <rect key="frame" x="3" y="3" width="310" height="127"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DKk-In-jvI">
-                                            <rect key="frame" x="13" y="79" width="284" height="16"/>
+                                            <rect key="frame" x="13" y="96" width="284" height="16"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Data source" id="spg-XS-UDd">
                                                 <font key="font" metaFont="systemBold"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -135,7 +290,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1aZ-1M-ROp">
-                                            <rect key="frame" x="13" y="60" width="284" height="16"/>
+                                            <rect key="frame" x="13" y="77" width="284" height="16"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="https://corona-stats.online/?source=2" id="lhY-fZ-nQY">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="linkColor" catalog="System" colorSpace="catalog"/>
@@ -146,15 +301,17 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1eH-IB-UlK">
-                                            <rect key="frame" x="13" y="17" width="284" height="16"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Daily data resets at midnight GMT+0" id="uop-yu-b1c">
+                                            <rect key="frame" x="13" y="18" width="284" height="32"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" id="uop-yu-b1c">
                                                 <font key="font" metaFont="system"/>
+                                                <string key="title">Data of daily change in given region 
+resets everyday at midnight GMT+0</string>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="818-fj-txC">
-                                            <rect key="frame" x="15" y="43" width="275" height="5"/>
+                                            <rect key="frame" x="15" y="60" width="275" height="5"/>
                                         </box>
                                     </subviews>
                                     <constraints>
@@ -172,7 +329,7 @@
                                 </view>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KFk-cx-JfQ">
-                                <rect key="frame" x="76" y="211" width="256" height="16"/>
+                                <rect key="frame" x="76" y="227" width="256" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" title="COVID-19 Status" id="YJw-ga-rD7">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -180,7 +337,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hHN-ma-xYN">
-                                <rect key="frame" x="76" y="194" width="256" height="16"/>
+                                <rect key="frame" x="76" y="210" width="256" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="version: 1.0.0" id="OSg-Ed-kOh">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -225,7 +382,7 @@ DQ
                 </viewController>
                 <customObject id="hxu-rc-ssr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="862.5"/>
+            <point key="canvasLocation" x="68" y="870.5"/>
         </scene>
     </scenes>
     <resources>

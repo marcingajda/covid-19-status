@@ -18,8 +18,8 @@ class StatsDisplay: NSObject {
         deltaDisplay = deltaItem
     }
 
-    func showStats(region: RegionStats) {
-        let formatter = StatsFormatter(stats: region)
+    func show(stats: RegionStats) {
+        let formatter = StatsFormatter(stats: stats)
 
         DispatchQueue.main.async {
             self.statusDisplay?.attributedTitle = formatter.getRegionStatus()
@@ -28,7 +28,7 @@ class StatsDisplay: NSObject {
         }
     }
 
-    func showError(message: String?) {
+    func showError(withMessage message: String?) {
         let error = message ?? NSLocalizedString("unknown cause", comment: "")
 
         DispatchQueue.main.async {
