@@ -1,33 +1,44 @@
-
 /* Class = "NSMenuItem"; title = "Covid-19 Status"; ObjectID = "1Xt-HY-uBw"; */
 "1Xt-HY-uBw.title" = "Covid-19 Status";
 
+/* Class = "NSTextFieldCell"; title = "Regions history size:"; ObjectID = "4Z9-8E-CNG"; */
+"4Z9-8E-CNG.title" = "Wielkość historii regionów:";
+
 /* Class = "NSMenuItem"; title = "Quit"; ObjectID = "4sb-4s-VLi"; */
 "4sb-4s-VLi.title" = "Zamknij";
+
+/* Class = "NSTextFieldCell"; title = "Refresh interval:"; ObjectID = "51x-8i-TTI"; */
+"51x-8i-TTI.title" = "Częstotliwość odświeżania:";
 
 /* Class = "NSMenuItem"; title = "Loading"; ObjectID = "5kV-Vb-QxS"; */
 "5kV-Vb-QxS.title" = "Ładowanie";
 
 /* Class = "NSMenuItem"; title = "Retry now"; ObjectID = "6jx-Ii-JOn"; */
-"6jx-Ii-JOn.title" = "Spróbuj ponownie";
+"6jx-Ii-JOn.title" = "Ponów teraz";
 
 /* Class = "NSMenuItem"; title = "About..."; ObjectID = "8AQ-8p-cQP"; */
-"8AQ-8p-cQP.title" = "O programie...";
+"8AQ-8p-cQP.title" = "O aplikacji...";
 
 /* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
-"AYu-sK-qS6.title" = "Menu główne";
+"AYu-sK-qS6.title" = "Główne menu";
+
+/* Class = "NSButtonCell"; title = "Close"; ObjectID = "CeK-V0-XNw"; */
+"CeK-V0-XNw.title" = "Zamknij";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "E40-p5-Mjh"; */
 "E40-p5-Mjh.title" = "Zamknij";
 
 /* Class = "NSWindow"; title = "About"; ObjectID = "EIX-4g-u9N"; */
-"EIX-4g-u9N.title" = "O programie";
+"EIX-4g-u9N.title" = "O aplikacji";
+
+/* Class = "NSMenuItem"; title = "Last regions"; ObjectID = "LV7-r5-pVW"; */
+"LV7-r5-pVW.title" = "Ostatnie regiony";
 
 /* Class = "NSMenuItem"; title = "Select region"; ObjectID = "MAg-rl-DVH"; */
 "MAg-rl-DVH.title" = "Wybierz region";
 
 /* Class = "NSTextFieldCell"; title = "version: 1.0.0"; ObjectID = "OSg-Ed-kOh"; */
-"OSg-Ed-kOh.title" = "version: 1.0.0";
+"OSg-Ed-kOh.title" = "wersja: 1.0.0";
 
 /* Class = "NSMenu"; title = "Select region"; ObjectID = "URq-Fm-ggV"; */
 "URq-Fm-ggV.title" = "Wybierz region";
@@ -38,11 +49,17 @@
 /* Class = "NSTextFieldCell"; title = "COVID-19 Status"; ObjectID = "YJw-ga-rD7"; */
 "YJw-ga-rD7.title" = "COVID-19 Status";
 
+/* Class = "NSMenu"; title = "Last regions"; ObjectID = "ZRd-S3-NG4"; */
+"ZRd-S3-NG4.title" = "Ostatnie regiony";
+
 /* Class = "NSBox"; title = "Box"; ObjectID = "dPt-xi-xGS"; */
 "dPt-xi-xGS.title" = "Box";
 
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "fUu-Lr-91U"; */
+"fUu-Lr-91U.title" = "Preferencje";
+
 /* Class = "NSMenuItem"; title = "None"; ObjectID = "i8c-sB-7Tp"; */
-"i8c-sB-7Tp.title" = "Brak";
+"i8c-sB-7Tp.title" = "None";
 
 /* Class = "NSTextFieldCell"; title = "https://corona-stats.online/?source=2"; ObjectID = "lhY-fZ-nQY"; */
 "lhY-fZ-nQY.title" = "https://corona-stats.online/?source=2";
@@ -50,11 +67,23 @@
 /* Class = "NSMenuItem"; title = "Show notifications"; ObjectID = "ljG-1J-Upa"; */
 "ljG-1J-Upa.title" = "Pokaż powiadomienia";
 
+/* Class = "NSMenuItem"; title = "Preferences..."; ObjectID = "nsq-oj-T39"; */
+"nsq-oj-T39.title" = "Preferencje...";
+
+/* Class = "NSTextFieldCell"; title = "COVID-19 Status Preferences"; ObjectID = "plv-g9-ghO"; */
+"plv-g9-ghO.title" = "Preferencje COVID-19 Status";
+
 /* Class = "NSTextFieldCell"; title = "Data source"; ObjectID = "spg-XS-UDd"; */
 "spg-XS-UDd.title" = "Źródło danych";
 
 /* Class = "NSMenu"; title = "Covid-19 Status"; ObjectID = "uQy-DD-JDr"; */
 "uQy-DD-JDr.title" = "Covid-19 Status";
 
-/* Class = "NSTextFieldCell"; title = "Daily data resets at midnight GMT+0"; ObjectID = "uop-yu-b1c"; */
-"uop-yu-b1c.title" = "Dane dzienne resetują się o północy GMT+0";
+/* Class = "NSTextFieldCell"; title = "Data of daily change in given region \nresets everyday at midnight GMT+0"; ObjectID = "uop-yu-b1c"; */
+"uop-yu-b1c.title" = "Dane o dziennej zmianie w danym regionie\nresetują się o północy czasu GMT+0";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "xdV-7Q-XdL"; */
+"xdV-7Q-XdL.title" = "Box";
+
+/* Class = "NSMenuItem"; title = "None"; ObjectID = "xrM-70-jyW"; */
+"xrM-70-jyW.title" = "Brak";

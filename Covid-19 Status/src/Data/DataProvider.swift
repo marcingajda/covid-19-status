@@ -8,6 +8,22 @@
 
 import Cocoa
 
+class RegionStats: NSObject, Decodable {
+    let country: String
+    let cases: Int
+    let todayCases: Int?
+    let deaths: Int
+    let todayDeaths: Int?
+    let recovered: Int
+    let active: Int
+    let critical: Int
+}
+
+class CoronaStats: NSObject, Decodable {
+    let data: [RegionStats]
+    let worldStats: RegionStats
+}
+
 class DataProvider: NSObject {
     let settings = UserDefaults.standard
     var timer: Timer?
@@ -22,7 +38,7 @@ class DataProvider: NSObject {
         onErrorCallback = onError
     }
 
-    func getStatsFor(region: String) -> RegionStats? {
+    func getStats(forRegion region: String) -> RegionStats? {
         guard let lastCoronaStats = lastCoronaStats else {
             return nil
         }
@@ -34,16 +50,15 @@ class DataProvider: NSObject {
             }) ?? lastCoronaStats.worldStats
     }
 
-    func startTimer() {
-        let prefferedInterval = settings.double(forKey: SettingsKey.fetchInterval.rawValue)
-        let interval = max(prefferedInterval, 3)
+    func setupTimer() {
+        let interval = max(settings.fetchInterval, 1)
 
         if let timer = timer {
             timer.invalidate()
         }
 
         timer = Timer.scheduledTimer(
-            timeInterval: interval * 60,
+            timeInterval: Double(interval) * 60,
             target: self,
             selector: #selector(self.doUpdate),
             userInfo: nil,

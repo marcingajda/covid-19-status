@@ -1,60 +1,7 @@
+/*
+  Localizable.strings"
+  Covid-19 Status"
 
-/* Class = "NSMenuItem"; title = "Covid-19 Status"; ObjectID = "1Xt-HY-uBw"; */
-"1Xt-HY-uBw.title" = "Covid-19 Status";
-
-/* Class = "NSMenuItem"; title = "Quit"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Zamknij";
-
-/* Class = "NSMenuItem"; title = "Loading"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "Ładowanie";
-
-/* Class = "NSMenuItem"; title = "Retry now"; ObjectID = "6jx-Ii-JOn"; */
-"6jx-Ii-JOn.title" = "Spróbuj ponownie";
-
-/* Class = "NSMenuItem"; title = "About..."; ObjectID = "8AQ-8p-cQP"; */
-"8AQ-8p-cQP.title" = "O aplikacji...";
-
-/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
-"AYu-sK-qS6.title" = "Menu główne";
-
-/* Class = "NSButtonCell"; title = "Close"; ObjectID = "E40-p5-Mjh"; */
-"E40-p5-Mjh.title" = "Zamknij";
-
-/* Class = "NSWindow"; title = "About"; ObjectID = "EIX-4g-u9N"; */
-"EIX-4g-u9N.title" = "O programie";
-
-/* Class = "NSMenuItem"; title = "Select region"; ObjectID = "MAg-rl-DVH"; */
-"MAg-rl-DVH.title" = "Wybierz region";
-
-/* Class = "NSTextFieldCell"; title = "version: 1.0.0"; ObjectID = "OSg-Ed-kOh"; */
-"OSg-Ed-kOh.title" = "wersja: 1.0.0";
-
-/* Class = "NSMenu"; title = "Select region"; ObjectID = "URq-Fm-ggV"; */
-"URq-Fm-ggV.title" = "Wybierz region";
-
-/* Class = "NSTextFieldCell"; title = "COVID-19 Status"; ObjectID = "YJw-ga-rD7"; */
-"YJw-ga-rD7.title" = "COVID-19 Status";
-
-/* Class = "NSBox"; title = "Box"; ObjectID = "dPt-xi-xGS"; */
-"dPt-xi-xGS.title" = "Box";
-
-/* Class = "NSTextFieldCell"; title = "https://iconmonstr.com/virus-2-svg/"; ObjectID = "er1-QF-EuT"; */
-"er1-QF-EuT.title" = "https://iconmonstr.com/virus-2-svg/";
-
-/* Class = "NSMenuItem"; title = "Brak"; ObjectID = "i8c-sB-7Tp"; */
-"i8c-sB-7Tp.title" = "Brak";
-
-/* Class = "NSTextFieldCell"; title = "https://corona-stats.online/?source=2"; ObjectID = "lhY-fZ-nQY"; */
-"lhY-fZ-nQY.title" = "https://corona-stats.online/?source=2";
-
-/* Class = "NSMenuItem"; title = "Show notifications"; ObjectID = "ljG-1J-Upa"; */
-"ljG-1J-Upa.title" = "Pokazuj powiadomienia";
-
-/* Class = "NSTextFieldCell"; title = "Data source"; ObjectID = "spg-XS-UDd"; */
-"spg-XS-UDd.title" = "Źródło danych";
-
-/* Class = "NSMenu"; title = "Covid-19 Status"; ObjectID = "uQy-DD-JDr"; */
-"uQy-DD-JDr.title" = "Covid-19 Status";
-
-/* Class = "NSTextFieldCell"; title = "Logo icon"; ObjectID = "uop-yu-b1c"; */
-"uop-yu-b1c.title" = "Ikona logo";
+  Created by Marcin Gajda on 25/03/2020."
+  Copyright © 2020 Marcin Gajda. All rights reserved."
+*/

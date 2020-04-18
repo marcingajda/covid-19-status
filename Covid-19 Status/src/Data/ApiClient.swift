@@ -10,10 +10,14 @@ import Cocoa
 
 typealias FetchComplete = ((CoronaStats?, String?) -> Void)
 
+enum ApiEndpoint: String {
+    case stats = "https://corona-stats.online?format=json&source=2"
+}
+
 class ApiClient: NSObject {
     static func fetchData(onComplete: @escaping FetchComplete) {
         guard let url = NSURL(string: ApiEndpoint.stats.rawValue)?.absoluteURL else {
-            criticalError(message: "API address is not an URL")
+            ErrorHandler.standard.critical(withMessage: "API address is not an URL")
             return
         }
 
