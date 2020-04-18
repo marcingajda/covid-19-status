@@ -85,6 +85,9 @@ extension Double {
         if self.isInfinite {
             return "\(self < 0.0 ? "-" : "+")Infinity"
         }
+        if self == 0 {
+            return "0"
+        }
 
         let units = ["", "k", "M", "B"]
         var value = self
