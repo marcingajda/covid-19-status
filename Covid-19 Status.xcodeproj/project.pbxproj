@@ -69,8 +69,8 @@
 		D3193A272438CF340035FBD5 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		D3193A2B2438D5580035FBD5 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		D3193A6F243CD5700035FBD5 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		D33814BC244A6AB700BCC6B2 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		D33814BE244B156200BCC6B2 /* PreferencesOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesOptions.swift; sourceTree = "<group>"; };
+		D33814C1244BB46700BCC6B2 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		D356B8F424426D120085BA0E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		D356B8F6244291DB0085BA0E /* HistoryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMenu.swift; sourceTree = "<group>"; };
 		D367A8D5244A0AD000B70C2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -348,7 +348,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D3C1A35B2427BF8B00B69DCB /* Base */,
-				D33814BC244A6AB700BCC6B2 /* pl */,
+				D33814C1244BB46700BCC6B2 /* pl */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

@@ -59,7 +59,7 @@
 "fUu-Lr-91U.title" = "Preferencje";
 
 /* Class = "NSMenuItem"; title = "None"; ObjectID = "i8c-sB-7Tp"; */
-"i8c-sB-7Tp.title" = "None";
+"i8c-sB-7Tp.title" = "Brak";
 
 /* Class = "NSTextFieldCell"; title = "https://corona-stats.online/?source=2"; ObjectID = "lhY-fZ-nQY"; */
 "lhY-fZ-nQY.title" = "https://corona-stats.online/?source=2";
@@ -87,3 +87,8 @@
 
 /* Class = "NSMenuItem"; title = "None"; ObjectID = "xrM-70-jyW"; */
 "xrM-70-jyW.title" = "Brak";
+
+/* Class = "NSButtonCell"; title = "Show numbers in short format (eg.: 21k)"; ObjectID = "aSg-If-LRF"; */
+"aSg-If-LRF.title" = "Pokaż liczby w zapisie skróconym (np.: 21k)";
+
+"BaM-SR-crV.label" = "Ogólne";
