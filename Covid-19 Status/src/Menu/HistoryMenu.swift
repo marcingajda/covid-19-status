@@ -39,10 +39,8 @@ class HistoryMenu: NSMenu {
 
     func onRegionChange(region: String) {
         if let index = historyItems.firstIndex(of: region) {
-            if historyItems.count > maxHistorySize {
-                historyItems.remove(at: index)
-            }
-        } else if historyItems.count > maxHistorySize {
+            historyItems.remove(at: index)
+        } else if historyItems.count == maxHistorySize {
             historyItems.removeFirst()
         }
 
