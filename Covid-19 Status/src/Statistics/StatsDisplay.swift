@@ -12,6 +12,9 @@ import Cocoa
 class StatsDisplay: NSObject {
     var statusDisplay: NSStatusBarButton?
     var deltaDisplay: NSMenuItem?
+    var currentStats: RegionStats?
+
+    var settings = UserDefaults.standard
 
     func setComponents(statusItem: NSStatusBarButton, deltaItem: NSMenuItem) {
         statusDisplay = statusItem
@@ -19,7 +22,16 @@ class StatsDisplay: NSObject {
     }
 
     func show(stats: RegionStats) {
-        let formatter = StatsFormatter(stats: stats)
+        currentStats = stats
+        renderStats()
+    }
+
+    func renderStats() {
+        guard let stats = currentStats else {
+            return
+        }
+
+        let formatter = StatsFormatter(stats: stats, method: settings.formatMethod)
 
         DispatchQueue.main.async {
             self.statusDisplay?.attributedTitle = formatter.getRegionStatus()

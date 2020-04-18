@@ -11,9 +11,10 @@ import Foundation
 class Notificator {
     var lastUpdates: [String: RegionStats] = [:]
     var isEnabled = false
+    var settings = UserDefaults.standard
 
     func showNotification(stats: RegionStats) {
-        let formatter = StatsFormatter(stats: stats)
+        let formatter = StatsFormatter(stats: stats, method: settings.formatMethod)
 
         let notification = NSUserNotification()
         notification.identifier = formatter.getUniqueId()

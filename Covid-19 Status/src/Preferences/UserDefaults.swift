@@ -83,4 +83,21 @@ extension UserDefaults {
         print("Setting alerts enabled status:", enabled)
         set(enabled, forKey: SettingsKey.alertsEnabled.rawValue)
     }
+
+    // format method
+
+    var formatMethod: StatsFormatMethod {
+        if exists(key: SettingsKey.formatMethod.rawValue) {
+            if let method = StatsFormatMethod(rawValue: string(forKey: SettingsKey.formatMethod.rawValue) ?? "long") {
+                return method
+            }
+            return PreferencesOptions.defaultFormatMethod
+        }
+        return PreferencesOptions.defaultFormatMethod
+    }
+
+    func saveFormatMethod(method: StatsFormatMethod) {
+        print("Setting format method:", method)
+        set(method.rawValue, forKey: SettingsKey.formatMethod.rawValue)
+    }
 }

@@ -46,6 +46,9 @@ class AppController {
             Messenger.shared.onFetchRequest {
                 self.display.showLoading()
                 self.provider?.doUpdate()
+            },
+            Messenger.shared.onFormatMethodChange { _ in
+                self.display.renderStats()
             }
         ]
 

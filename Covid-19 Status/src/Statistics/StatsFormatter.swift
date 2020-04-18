@@ -23,18 +23,29 @@ func menuBarTextFormatter(label: String) -> NSMutableAttributedString {
     return text
 }
 
+enum StatsFormatMethod: String {
+    case short
+    case long
+}
+
 class StatsFormatter {
     var stats: RegionStats
+    var method: StatsFormatMethod
 
-    init(stats: RegionStats) {
+    init(stats: RegionStats, method: StatsFormatMethod) {
         self.stats = stats
+        self.method = method
     }
 
     func formatStatistic(value: Int) -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = NumberFormatter.Style.decimal
-        numberFormatter.groupingSeparator = " "
-        return numberFormatter.string(from: NSNumber(value: value)) ?? "??"
+        if method == .long {
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = NumberFormatter.Style.decimal
+            numberFormatter.groupingSeparator = " "
+            return numberFormatter.string(from: NSNumber(value: value)) ?? "??"
+        } else {
+            return Double(value).shortStringRepresentation
+        }
     }
 
     func getUniqueId() -> String {
@@ -63,5 +74,30 @@ class StatsFormatter {
             format: NSLocalizedString("COVID-19 (%@)\nConfirmed | Deaths | Recured", comment: ""),
             countryName
         )
+    }
+}
+
+extension Double {
+    var shortStringRepresentation: String {
+        if self.isNaN {
+            return "NaN"
+        }
+        if self.isInfinite {
+            return "\(self < 0.0 ? "-" : "+")Infinity"
+        }
+
+        let units = ["", "k", "M", "B"]
+        var value = self
+        var unitIndex = 0
+
+        while unitIndex < units.count - 1 {
+            if abs(value) < 1000.0 {
+                break
+            }
+            unitIndex += 1
+            value /= 1000.0
+        }
+
+        return "\(String(format: "%0.*g", Int(log10(abs(value))) + 2, value))\(units[unitIndex])"
     }
 }

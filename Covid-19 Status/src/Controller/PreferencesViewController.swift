@@ -15,6 +15,7 @@ enum SettingsKey: String {
     case fetchInterval
     case historySize
     case history
+    case formatMethod
 }
 
 class PreferencesViewController: NSViewController {
@@ -24,6 +25,7 @@ class PreferencesViewController: NSViewController {
 
     @IBOutlet var intervalSelect: NSArrayController?
     @IBOutlet var historySelect: NSArrayController?
+    @IBOutlet var formatMethodButton: NSButton?
 
     @objc dynamic var allowedIntervals = PreferencesOptions.fetchIntervals
     @objc dynamic var allowedHistorySizes = PreferencesOptions.historySizes
@@ -42,16 +44,38 @@ class PreferencesViewController: NSViewController {
         Messenger.shared.dispatchHistorySize(size: value)
     }
 
+    @IBAction func formatMethodChangeHandler(_ sender: NSButton) {
+        let newMethod: StatsFormatMethod = sender.state == .on ? .short : .long
+        settings.saveFormatMethod(method: newMethod)
+        Messenger.shared.dispatchFormatMethod(method: newMethod)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         NSApplication.shared.activate(ignoringOtherApps: true)
 
+        guard let formatMethodButton = formatMethodButton else {
+            ErrorHandler.standard.critical(withMessage: "The app is broken (format method button)")
+            return
+        }
+        guard let intervalSelect = intervalSelect else {
+            ErrorHandler.standard.critical(withMessage: "The app is broken (interval select)")
+            return
+        }
+        guard let historySelect = historySelect else {
+            ErrorHandler.standard.critical(withMessage: "The app is broken (history select)")
+            return
+        }
+
+        print("format method:", settings.formatMethod)
+        formatMethodButton.state = settings.formatMethod == .short ? .on : .off
+
         let intervalOption = findOption(options: allowedIntervals, value: settings.fetchInterval)
-        intervalSelect?.setSelectedObjects([intervalOption])
+        intervalSelect.setSelectedObjects([intervalOption])
 
         let historySizeOption = findOption(options: allowedHistorySizes, value: settings.historySize)
-        historySelect?.setSelectedObjects([historySizeOption])
+        historySelect.setSelectedObjects([historySizeOption])
 
         setupObservers()
     }

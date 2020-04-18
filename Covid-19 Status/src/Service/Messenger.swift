@@ -14,6 +14,7 @@ extension NSNotification.Name {
     static let FetchIntervalChange = NSNotification.Name(rawValue: "FetchIntervalChange")
     static let AlertsStatusChange = NSNotification.Name(rawValue: "AlertsStatusChange")
     static let FetchRequest = NSNotification.Name(rawValue: "FetchRequest")
+    static let FormatMethodChange = NSNotification.Name(rawValue: "FormatMethodChange")
 }
 
 class Messenger: NSObject {
@@ -85,6 +86,20 @@ class Messenger: NSObject {
         return notifier.addObserver(forName: .AlertsStatusChange, object: nil, queue: nil) { notification in
             if let enabled = notification.userInfo?["alerts"] as? Bool {
               listener(enabled)
+            }
+        }
+    }
+
+    // format method
+
+    func dispatchFormatMethod(method: StatsFormatMethod) {
+        notifier.post(name: .FormatMethodChange, object: self, userInfo: ["method": method])
+    }
+
+    func onFormatMethodChange(listener: @escaping (_ enabled: StatsFormatMethod) -> Void) -> NSObjectProtocol {
+        return notifier.addObserver(forName: .FormatMethodChange, object: nil, queue: nil) { notification in
+            if let method = notification.userInfo?["method"] as? StatsFormatMethod {
+              listener(method)
             }
         }
     }
