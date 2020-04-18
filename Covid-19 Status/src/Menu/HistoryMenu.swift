@@ -61,12 +61,36 @@ class HistoryMenu: NSMenu {
         Messenger.shared.dispatchSelectedRegion(region: region)
     }
 
+    @objc func clearHistoryHandler(sender: NSMenuItem) {
+        historyItems = []
+        settings.saveHistory(list: [])
+        buildMenu()
+    }
+
+    func buildEmptyMenuItem() -> NSMenuItem {
+        let emptyItem = NSMenuItem()
+        emptyItem.title = NSLocalizedString("(empty)", comment: "")
+        emptyItem.isEnabled = false
+
+        return emptyItem
+    }
+
+    func buildClearHistoryMenuItem() -> NSMenuItem {
+        let clearHistoryItem = NSMenuItem()
+        clearHistoryItem.title = NSLocalizedString("Clear history", comment: "")
+        clearHistoryItem.action = #selector(clearHistoryHandler(sender:))
+        clearHistoryItem.target = self
+
+        return clearHistoryItem
+    }
+
     func buildMenuItem(withName name: String) -> NSMenuItem {
         let regionItem = NSMenuItem()
         regionItem.title = NSLocalizedString(name, comment: "menu")
         regionItem.action = #selector(regionSelectedHandler(sender:))
         regionItem.target = self
         regionItem.representedObject = name
+
         return regionItem
     }
 
@@ -81,10 +105,10 @@ class HistoryMenu: NSMenu {
         }
 
         if reversedHistoryItems.count == 0 {
-            let emptyItem = NSMenuItem()
-            emptyItem.title = NSLocalizedString("(empty)", comment: "")
-            emptyItem.isEnabled = false
-            addItem(emptyItem)
+            addItem(buildEmptyMenuItem())
+        } else {
+            addItem(NSMenuItem.separator())
+            addItem(buildClearHistoryMenuItem())
         }
     }
 }
