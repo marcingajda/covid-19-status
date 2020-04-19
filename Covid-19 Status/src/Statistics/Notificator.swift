@@ -15,10 +15,11 @@ class Notificator {
 
     func showNotification(stats: RegionStats) {
         let formatter = StatsFormatter(stats: stats, method: settings.formatMethod)
+        let regionName = NSLocalizedString(stats.country, comment: "")
 
         let notification = NSUserNotification()
         notification.identifier = formatter.getUniqueId()
-        notification.title = "COVID-19 Update (\(NSLocalizedString(stats.country, comment: "")))"
+        notification.title = String(format: NSLocalizedString("COVID-19 Update (%@)", comment: ""), regionName)
         notification.subtitle = formatter.getRegionStatus().string
         notification.informativeText = formatter.getRegionDelta()
         notification.soundName = NSUserNotificationDefaultSoundName

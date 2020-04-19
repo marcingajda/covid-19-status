@@ -9,7 +9,8 @@
 "COVID-19 Status" = "COVID-19 Status";
 "COVID-19 (%@)\nConfirmed | Deaths | Recured" = "COVID-19 (%@)\nPrzypadki | Zgony | Wyzdrowienia";
 "Today: +%@ confirmed +%@ deaths" = "Dzisiaj: +%@ przypadki +%@ zgony";
-"version %@" = "wesja %@";
+"COVID-19 Update (%@)" = "Aktualizacja COVID-19 (%@)";
+"version %@" = "wersja %@";
 "Loading..." = "Ładowanie...";
 "COVID-19 Status: Error" = "COVID-19 Status: Błąd";
 "unknown cause" = "powód nieznany";
