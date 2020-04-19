@@ -13,7 +13,7 @@ A small widget that shows the ongoing COVID-19 pandemic stats in your MacOS comp
 
 ## Data source
 
-The data is fetched from [corona-stats.online REST API](https://corona-stats.online/?source=2) every three minutes.
+The data is fetched from [corona-stats.online REST API](https://corona-stats.online/?source=2) (source 2).
 
 ## Screenshots
 
