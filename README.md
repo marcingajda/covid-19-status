@@ -46,4 +46,4 @@ To run this project in Xcode you must first install Carthage dependiences
 [MIT licensed](./LICENSE)
 
 
-[DOWNLOAD]: https://github.com/marcingajda/covid-19-status/releases/download/v1.2.0/Covid-19.Status.v1.2.0.dmg
+[DOWNLOAD]: https://github.com/marcingajda/covid-19-status/releases/download/v1.2.1/Covid-19.Status.v1.2.1.dmg
