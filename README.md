@@ -9,7 +9,8 @@ A small widget that shows the ongoing COVID-19 pandemic stats in your MacOS comp
 * Allow to choose between global and region specific stats
 * Shows daily change in chosen statistic
 * Displays notifications when followed statistic updates
-* Has english and polish localisations
+* Has few configuration options like update interval
+* Includes english and polish localisations
 
 ## Data source
 
